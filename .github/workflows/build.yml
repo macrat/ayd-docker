@@ -43,10 +43,10 @@ jobs:
           push: true
           tags: ${{ steps.ubuntu.outputs.tags }}
           labels: ${{ steps.ubuntu.outputs.labels }}
-          build-args:
-            - BASE_IMAGE=ubuntu
-            - VERSION=${{ steps.version.outputs.version }}
-            - COMMIT=${{ steps.version.outputs.commit }}
+          build-args: |
+            BASE_IMAGE=ubuntu
+            VERSION=${{ steps.version.outputs.version }}
+            COMMIT=${{ steps.version.outputs.commit }}
           platforms: linux/amd64,linux/arm64,linux/arm/v6
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
@@ -67,10 +67,10 @@ jobs:
           push: true
           tags: ${{ steps.alpine.outputs.tags }}
           labels: ${{ steps.alpine.outputs.labels }}
-          build-args:
-            - BASE_IMAGE=alpine
-            - VERSION=${{ steps.version.outputs.version }}
-            - COMMIT=${{ steps.version.outputs.commit }}
+          build-args: |
+            BASE_IMAGE=alpine
+            VERSION=${{ steps.version.outputs.version }}
+            COMMIT=${{ steps.version.outputs.commit }}
           platforms: linux/amd64,linux/arm64,linux/arm/v6
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
@@ -89,10 +89,10 @@ jobs:
           push: true
           tags: ${{ steps.scratch.outputs.tags }}
           labels: ${{ steps.scratch.outputs.labels }}
-          build-args:
-            - BASE_IMAGE=scratch
-            - VERSION=${{ steps.version.outputs.version }}
-            - COMMIT=${{ steps.version.outputs.commit }}
+          build-args: |
+            BASE_IMAGE=scratch
+            VERSION=${{ steps.version.outputs.version }}
+            COMMIT=${{ steps.version.outputs.commit }}
           platforms: linux/amd64,linux/arm64,linux/arm/v6
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
