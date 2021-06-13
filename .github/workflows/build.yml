@@ -44,7 +44,7 @@ jobs:
           tags: ${{ steps.ubuntu.outputs.tags }}
           labels: ${{ steps.ubuntu.outputs.labels }}
           build-args:
-            - BASE_IMAGE=${{ matrix.base_image }}
+            - BASE_IMAGE=ubuntu
             - VERSION=${{ steps.version.outputs.version }}
             - COMMIT=${{ steps.version.outputs.commit }}
           platforms: linux/amd64,linux/arm64,linux/arm/v6
@@ -68,7 +68,7 @@ jobs:
           tags: ${{ steps.alpine.outputs.tags }}
           labels: ${{ steps.alpine.outputs.labels }}
           build-args:
-            - BASE_IMAGE=${{ matrix.base_image }}
+            - BASE_IMAGE=alpine
             - VERSION=${{ steps.version.outputs.version }}
             - COMMIT=${{ steps.version.outputs.commit }}
           platforms: linux/amd64,linux/arm64,linux/arm/v6
@@ -90,7 +90,7 @@ jobs:
           tags: ${{ steps.scratch.outputs.tags }}
           labels: ${{ steps.scratch.outputs.labels }}
           build-args:
-            - BASE_IMAGE=${{ matrix.base_image }}
+            - BASE_IMAGE=scratch
             - VERSION=${{ steps.version.outputs.version }}
             - COMMIT=${{ steps.version.outputs.commit }}
           platforms: linux/amd64,linux/arm64,linux/arm/v6
