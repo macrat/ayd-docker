@@ -33,10 +33,10 @@ jobs:
       - uses: docker/metadata-action@v3
         id: ubuntu
         with:
-          images: ${{ github.repository }}
+          images: macrat/ayd
           flavor: |
             latest=false
-          tag-semver: |
+          tags: |
             type=semver,pattern=ubuntu-{{version}}
             type=semver,pattern=ubuntu-{{major}}.{{minor}}
       - uses: docker/build-push-action@v2
@@ -55,10 +55,10 @@ jobs:
       - uses: docker/metadata-action@v3
         id: alpine
         with:
-          images: ${{ github.repository }}
+          images: macrat/ayd
           flavor: |
             latest=true
-          tag-semver: |
+          tags: |
             type=semver,pattern=alpine-{{version}}
             type=semver,pattern=alpine-{{major}}.{{minor}}
             type=semver,pattern={{version}}
@@ -79,10 +79,10 @@ jobs:
       - uses: docker/metadata-action@v3
         id: scratch
         with:
-          images: ${{ github.repository }}
+          images: macrat/ayd
           flavor: |
             latest=false
-          tag-semver: |
+          tags: |
             type=semver,pattern=scratch-{{version}}
             type=semver,pattern=scratch-{{major}}.{{minor}}
       - uses: docker/build-push-action@v2
