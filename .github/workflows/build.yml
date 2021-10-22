@@ -39,16 +39,13 @@ jobs:
       - uses: docker/metadata-action@v3
         id: ubuntu
         with:
-          images: macrat/ayd
+          images: macrat/ayd,ghcr.io/macrat/ayd
           flavor: |
             latest=false
           tags: |
             type=semver,pattern=ubuntu-latest
             type=semver,pattern=ubuntu-{{version}}
             type=semver,pattern=ubuntu-{{major}}.{{minor}}
-            type=semver,pattern=ghcr.io/${{ github.repository_owner }}/ubuntu-latest
-            type=semver,pattern=ghcr.io/${{ github.repository_owner }}/ubuntu-{{version}}
-            type=semver,pattern=ghcr.io/${{ github.repository_owner }}/ubuntu-{{major}}.{{minor}}
       - uses: docker/build-push-action@v2
         with:
           push: true
@@ -65,7 +62,7 @@ jobs:
       - uses: docker/metadata-action@v3
         id: alpine
         with:
-          images: macrat/ayd
+          images: macrat/ayd,ghcr.io/macrat/ayd
           flavor: |
             latest=true
           tags: |
@@ -74,11 +71,6 @@ jobs:
             type=semver,pattern=alpine-{{major}}.{{minor}}
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
-            type=semver,pattern=ghcr.io/${{ github.repository_owner }}/alpine-latest
-            type=semver,pattern=ghcr.io/${{ github.repository_owner }}/alpine-{{version}}
-            type=semver,pattern=ghcr.io/${{ github.repository_owner }}/alpine-{{major}}.{{minor}}
-            type=semver,pattern=ghcr.io/${{ github.repository_owner }}/{{version}}
-            type=semver,pattern=ghcr.io/${{ github.repository_owner }}/{{major}}.{{minor}}
       - uses: docker/build-push-action@v2
         with:
           push: true
@@ -95,16 +87,13 @@ jobs:
       - uses: docker/metadata-action@v3
         id: scratch
         with:
-          images: macrat/ayd
+          images: macrat/ayd,ghcr.io/macrat/ayd
           flavor: |
             latest=false
           tags: |
             type=semver,pattern=scratch-latest
             type=semver,pattern=scratch-{{version}}
             type=semver,pattern=scratch-{{major}}.{{minor}}
-            type=semver,pattern=ghcr.io/${{ github.repository_owner }}/scratch-latest
-            type=semver,pattern=ghcr.io/${{ github.repository_owner }}/scratch-{{version}}
-            type=semver,pattern=ghcr.io/${{ github.repository_owner }}/scratch-{{major}}.{{minor}}
       - uses: docker/build-push-action@v2
         with:
           push: true
