@@ -22,6 +22,14 @@ WORKDIR /usr/src/ayd-slack-alert
 COPY ayd-slack-alert .
 RUN go build --trimpath -ldflags="-s -w -X 'main.version=$VERSION' -X 'main.commit=$COMMIT'" -o /output/ayd-slack-alert
 
+WORKDIR /usr/src/ayd-ftp-probe
+COPY ayd-ftp-probe .
+RUN go build --trimpath -ldflags="-s -w -X 'main.version=$VERSION' -X 'main.commit=$COMMIT'" -o /output/ayd-ftp-probe
+
+WORKDIR /usr/src/ayd-smb-probe
+COPY ayd-smb-probe .
+RUN go build --trimpath -ldflags="-s -w -X 'main.version=$VERSION' -X 'main.commit=$COMMIT'" -o /output/ayd-smb-probe
+
 RUN apt update && apt install -y upx && upx --lzma /output/*
 
 

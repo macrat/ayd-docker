@@ -7,3 +7,9 @@
 [submodule "ayd-slack-alert"]
 	path = ayd-slack-alert
 	url = https://github.com/macrat/ayd-slack-alert
+[submodule "ayd-ftp-probe"]
+	path = ayd-ftp-probe
+	url = https://github.com/macrat/ayd-ftp-probe.git
+[submodule "ayd-smb-probe"]
+	path = ayd-smb-probe
+	url = https://github.com/macrat/ayd-smb-probe.git
