@@ -2,7 +2,7 @@ Ayd? container image
 ====================
 
 The container image of [Ayd?](https://github.com/macrat/ayd).
-This image includes [Ayd?](https://github.com/macrat/ayd) and plugins for [FTP probe](https://github.com/macrat/ayd-ftp-probe), [SMB probe](https://github.com/macrat/ayd-smb-probe), [email alert](https://github.com/macrat/ayd-mailto-alert), and [slack alert](https://github.com/macrat/ayd-slack-alert).
+This image includes [Ayd?](https://github.com/macrat/ayd) and plugins for [SMB probe](https://github.com/macrat/ayd-smb-probe), [email alert](https://github.com/macrat/ayd-mailto-alert), and [slack alert](https://github.com/macrat/ayd-slack-alert).
 
 There is 3 variants of the base images.
 
