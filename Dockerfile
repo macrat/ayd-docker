@@ -12,19 +12,19 @@ RUN mkdir /output
 
 WORKDIR /usr/src/ayd
 COPY ayd .
-RUN go build --trimpath -ldflags="-s -w -X 'main.version=$VERSION' -X 'main.commit=$COMMIT'" -o /output/ayd
+RUN go build --trimpath -ldflags="-s -w -X 'main.version=$VERSION' -X 'main.commit=$COMMIT'" -o /output/ayd -buildvcs=false
 
 WORKDIR /usr/src/ayd-mailto-alert
 COPY ayd-mailto-alert .
-RUN go build --trimpath -ldflags="-s -w -X 'main.version=$VERSION' -X 'main.commit=$COMMIT'" -o /output/ayd-mailto-alert
+RUN go build --trimpath -ldflags="-s -w -X 'main.version=$VERSION' -X 'main.commit=$COMMIT'" -o /output/ayd-mailto-alert -buildvcs=false
 
 WORKDIR /usr/src/ayd-slack-alert
 COPY ayd-slack-alert .
-RUN go build --trimpath -ldflags="-s -w -X 'main.version=$VERSION' -X 'main.commit=$COMMIT'" -o /output/ayd-slack-alert
+RUN go build --trimpath -ldflags="-s -w -X 'main.version=$VERSION' -X 'main.commit=$COMMIT'" -o /output/ayd-slack-alert -buildvcs=false
 
 WORKDIR /usr/src/ayd-smb-probe
 COPY ayd-smb-probe .
-RUN go build --trimpath -ldflags="-s -w -X 'main.version=$VERSION' -X 'main.commit=$COMMIT'" -o /output/ayd-smb-probe
+RUN go build --trimpath -ldflags="-s -w -X 'main.version=$VERSION' -X 'main.commit=$COMMIT'" -o /output/ayd-smb-probe -buildvcs=false
 
 RUN apt update && apt install -y upx && upx --lzma /output/*
 
