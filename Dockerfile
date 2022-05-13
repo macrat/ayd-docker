@@ -41,4 +41,4 @@ ENV AYD_PRIVILEGED yes
 EXPOSE 9000
 VOLUME /var/log/ayd
 
-ENTRYPOINT ["ayd"]
+ENTRYPOINT ["/usr/bin/ayd"]
