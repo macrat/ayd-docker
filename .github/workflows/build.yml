@@ -43,6 +43,7 @@ jobs:
           flavor: |
             latest=false
           tags: |
+            type=semver,pattern=ubuntu
             type=semver,pattern=ubuntu-latest
             type=semver,pattern=ubuntu-{{version}}
             type=semver,pattern=ubuntu-{{major}}.{{minor}}
@@ -66,6 +67,7 @@ jobs:
           flavor: |
             latest=true
           tags: |
+            type=semver,pattern=alpine
             type=semver,pattern=alpine-latest
             type=semver,pattern=alpine-{{version}}
             type=semver,pattern=alpine-{{major}}.{{minor}}
@@ -91,6 +93,7 @@ jobs:
           flavor: |
             latest=false
           tags: |
+            type=semver,pattern=scratch
             type=semver,pattern=scratch-latest
             type=semver,pattern=scratch-{{version}}
             type=semver,pattern=scratch-{{major}}.{{minor}}

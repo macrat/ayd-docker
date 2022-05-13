@@ -7,7 +7,7 @@ This image includes [Ayd?](https://github.com/macrat/ayd) and plugins for [SMB p
 There is 3 variants of the base images.
 
 - `latest`, `alpine`: Balanced variant. This is tiny but you can use shell.
-- `busybox`: Minimal variant. You can use this if you won't use shell.
+- `scratch`: Minimal variant. You can use this if you won't use shell.
 - `ubuntu`: Large variant. You can use `apt` command for adding command that you want.
 
 
