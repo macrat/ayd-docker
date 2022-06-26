@@ -1,7 +1,7 @@
-Ayd? container image
-====================
+Ayd container image
+===================
 
-The container image of [Ayd](https://github.com/macrat/ayd) status monitoring tool.
+The container image of [Ayd](https://github.com/macrat/ayd) alive monitoring tool.
 This image includes [Ayd](https://github.com/macrat/ayd) and plugins for [SMB probe](https://github.com/macrat/ayd-smb-probe), [email alert](https://github.com/macrat/ayd-mailto-alert), and [slack alert](https://github.com/macrat/ayd-slack-alert).
 
 There is 3 variants of the base images.
@@ -21,7 +21,7 @@ Below example is checking `http://your-service.example.com` every 10 minutes.
 $ docker run -p 9000:9000 macrat/ayd 10m https://your-service.example.com
 ```
 
-You can see status page on http://localhost:9000/status.html
+You can see status page on http://localhost:9000/
 
 Please see [Ayd project page](https://github.com/macrat/ayd) for more information.
 
