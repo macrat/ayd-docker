@@ -12,7 +12,7 @@ RUN mkdir /output
 
 WORKDIR /usr/src/ayd
 COPY ayd .
-RUN go build --trimpath -ldflags="-s -w -X 'main.version=$VERSION' -X 'main.commit=$COMMIT'" -o /output/ayd -buildvcs=false
+RUN go build --trimpath -ldflags="-s -w -X 'main.version=$VERSION' -X 'main.commit=$COMMIT'" -o /output/ayd -buildvcs=false ./cmd/ayd
 
 WORKDIR /usr/src/ayd-mailto-alert
 COPY ayd-mailto-alert .
