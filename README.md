@@ -11,6 +11,12 @@ There is 3 variants of the base images.
 - `ubuntu`: Large variant. You can use `apt` command for adding command that you want.
 
 
+## NOTICE
+
+**The container image has merged into [Ayd](https://github.com/macrat/ayd) repository.**
+**This repository is no longer maintained.**
+
+
 ## Usage
 
 ### Simple usage
